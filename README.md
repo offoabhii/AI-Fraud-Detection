@@ -1,13 +1,15 @@
 # Real-Time Fraud Detection System
 
+![Dashboard Preview](Dashboard.jpg)
+
 ### Overview
 I built this project to move beyond basic data analysis and create a system that reflects how fraud detection works in a professional environment. The goal was to build a tool that doesn't just predict fraud in a notebook, but provides a live dashboard and a permanent record of every decision made.
 
 ### The Data Challenge
 The biggest hurdle with this dataset was the extreme imbalance. Only 0.17% of the transactions were fraudulent. If I had trained the model on the raw data, it would have learned to simply guess "Normal" every time to achieve high accuracy. To fix this, I used SMOTE (Synthetic Minority Over-sampling Technique) during the training phase to create synthetic examples of fraud, forcing the model to actually learn the patterns of suspicious behavior.
 
-### The Trillion-Dollar Lesson
-A key learning point during testing was the "Amount" problem. I noticed that entering a trillion-dollar transaction would often get approved if the behavioral features (V1-V28) were set to normal. This taught me that in financial AI, the raw dollar amount is often less important than the behavioral indicators. I had to experiment with specific features like V14 and V17 to understand which ones were the true "red flags" that trigger the model's alarm.
+### Lesson
+A key learning point during testing was the "Amount" problem. I noticed that entering a million dollar transaction would often get approved if the behavioral features (V1-V28) were set to normal. This taught me that in financial AI, the raw dollar amount is often less important than the behavioral indicators. I had to experiment with specific features like V14 and V17 to understand which ones were the true "red flags" that trigger the model's alarm.
 
 ### How the System Works
 The project is split into three main parts:
